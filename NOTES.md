@@ -171,3 +171,6 @@ Par ordre de gravité. Je n'ai corrigé que ce qui touchait directement les RP d
 
 **Quand écrire un parser déterministe.** Quand un fournisseur pèse lourd en volume (au Québec, HQ et Énergir couvrent l'essentiel) **et** que ses PDF ont une couche texte stable. Ou quand les corrections montrent que le modèle s'y trompe souvent. Ou quand on veut l'auto-confiance (`parsed`) : seul un parser qui recoupe les totaux imprimés la justifie. Le modèle reste le filet pour la longue traîne. Les données de corrections disent lequel écrire ensuite.
 
+## Temps passé
+
+**À COMPLÉTER.** Indication : lecture et installation ~30 min, ticket 1 ~75 min, ticket 2 ~2 h (dont l'essai sur d'autres mises en page), notes ~40 min.
