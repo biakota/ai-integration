@@ -1,0 +1,360 @@
+{
+  "_comment": "All values are fictional. `expected.bill` holds account-level fields, `expected.entry` the billing-period fields of the one entry each sample produces. Canonical forms: ISO dates, decimal strings with '.' separator, account numbers without separators. end_billing_period is EXCLUSIVE (end - start = number of days billed). bill_cost is the cost before taxes (GST/QST/HST); credits that aren't taxes, like the Ontario Electricity Rebate, are included. billed_power (kW) only exists on demand-billed accounts, null otherwise. `personal_information` lists the raw strings as printed on the bill.",
+  "samples": [
+    {
+      "file": "hydro-quebec/pdf/hq-01-rate-d-standard.pdf",
+      "format": "pdf",
+      "has_text_layer": true,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000001",
+          "customer_name": "Élise Testeuse",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-04-10",
+          "end_billing_period": "2025-06-09",
+          "consumption": "2757",
+          "billed_power": null,
+          "bill_cost": "232.27"
+        }
+      },
+      "personal_information": [
+        "Élise Testeuse",
+        "999, rue Volt, app. 3",
+        "Laprise QC L1A 3H6",
+        "299 000 000 001",
+        "299000000001",
+        "600 000 000 001",
+        "100 000 001",
+        "3000 00001",
+        "G9SJ0000001"
+      ],
+      "notes": "Rate D (residential), bimonthly bill."
+    },
+    {
+      "file": "hydro-quebec/pdf/hq-02-rate-d-balance-carried.pdf",
+      "format": "pdf",
+      "has_text_layer": true,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000002",
+          "customer_name": "Jean-Éloi Testeur",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2024-12-17",
+          "end_billing_period": "2025-02-15",
+          "consumption": "4682",
+          "billed_power": null,
+          "bill_cost": "424.59"
+        }
+      },
+      "personal_information": [
+        "Jean-Éloi Testeur",
+        "123, boulevard de l'Exemple",
+        "Saint-Exemple QC J0J 1T0",
+        "299 000 000 002",
+        "299000000002",
+        "600 000 000 002",
+        "100 000 002",
+        "3000 00002",
+        "G9SJ0000002"
+      ],
+      "notes": "Rate D, winter bill, previous bill partly paid."
+    },
+    {
+      "file": "hydro-quebec/pdf/hq-03-rate-d-price-change.pdf",
+      "format": "pdf",
+      "has_text_layer": true,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000003",
+          "customer_name": "Aïcha Fictive",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-02-21",
+          "end_billing_period": "2025-04-22",
+          "consumption": "3558",
+          "billed_power": null,
+          "bill_cost": "311.58"
+        }
+      },
+      "personal_information": [
+        "Aïcha Fictive",
+        "456, avenue Ampère",
+        "Laprise QC L1A 3H7",
+        "299 000 000 003",
+        "299000000003",
+        "600 000 000 003",
+        "100 000 003",
+        "3000 00003",
+        "G9SJ0000003"
+      ],
+      "notes": "Rate D, February–April billing period."
+    },
+    {
+      "file": "hydro-quebec/pdf/hq-04-rate-dp-demand.pdf",
+      "format": "pdf",
+      "has_text_layer": true,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000004",
+          "customer_name": "Immeubles Démo Fictifs inc.",
+          "rate_code": "DP",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-06-05",
+          "end_billing_period": "2025-07-05",
+          "consumption": "12480",
+          "billed_power": "62",
+          "bill_cost": "1380.95"
+        }
+      },
+      "personal_information": [
+        "Immeubles Démo Fictifs inc.",
+        "789, rue du Test, bureau 410",
+        "Villetest QC H0H 0T0",
+        "1000, chemin du Compteur",
+        "Saint-Exemple QC J0J 2T0",
+        "299 000 000 004",
+        "299000000004",
+        "600 000 000 004",
+        "100 000 004",
+        "3000 00004",
+        "G9SJ0000004"
+      ],
+      "notes": "Rate DP, monthly bill."
+    },
+    {
+      "file": "hydro-quebec/pdf/hq-05-rate-d-credit.pdf",
+      "format": "pdf",
+      "has_text_layer": true,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000005",
+          "customer_name": "Olivier Échantillon",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-06-12",
+          "end_billing_period": "2025-08-11",
+          "consumption": "1262",
+          "billed_power": null,
+          "bill_cost": "115.66"
+        }
+      },
+      "personal_information": [
+        "Olivier Échantillon",
+        "321, rue des Watts",
+        "Laprise QC L1A 3H8",
+        "299 000 000 005",
+        "299000000005",
+        "600 000 000 005",
+        "100 000 005",
+        "3000 00005",
+        "G9SJ0000005"
+      ],
+      "notes": "Rate D, summer bill, account in credit."
+    },
+    {
+      "file": "hydro-quebec/images/hq-01-rate-d-standard-p1.png + -p2.png",
+      "format": "png",
+      "has_text_layer": false,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000001",
+          "customer_name": "Élise Testeuse",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-04-10",
+          "end_billing_period": "2025-06-09",
+          "consumption": "2757",
+          "billed_power": null,
+          "bill_cost": "232.27"
+        }
+      },
+      "personal_information": [
+        "Élise Testeuse",
+        "999, rue Volt, app. 3",
+        "Laprise QC L1A 3H6",
+        "299 000 000 001",
+        "299000000001",
+        "600 000 000 001",
+        "100 000 001",
+        "3000 00001",
+        "G9SJ0000001"
+      ],
+      "notes": "Same bill as hq-01, as two screenshots (one PNG per page). Upload both together."
+    },
+    {
+      "file": "hydro-quebec/images/hq-02-phone-photo-p1.png + -p2.png",
+      "format": "png",
+      "has_text_layer": false,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000002",
+          "customer_name": "Jean-Éloi Testeur",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2024-12-17",
+          "end_billing_period": "2025-02-15",
+          "consumption": "4682",
+          "billed_power": null,
+          "bill_cost": "424.59"
+        }
+      },
+      "personal_information": [
+        "Jean-Éloi Testeur",
+        "123, boulevard de l'Exemple",
+        "Saint-Exemple QC J0J 1T0",
+        "299 000 000 002",
+        "299000000002",
+        "600 000 000 002",
+        "100 000 002",
+        "3000 00002",
+        "G9SJ0000002"
+      ],
+      "notes": "Same bill as hq-02, one phone photo per page. Upload both together."
+    },
+    {
+      "file": "hydro-quebec/pdf/hq-06-scanned-no-text-layer.pdf",
+      "format": "pdf",
+      "has_text_layer": false,
+      "expected": {
+        "bill": {
+          "utility": "hydro_quebec",
+          "account_number": "299000000003",
+          "customer_name": "Aïcha Fictive",
+          "rate_code": "D",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-02-21",
+          "end_billing_period": "2025-04-22",
+          "consumption": "3558",
+          "billed_power": null,
+          "bill_cost": "311.58"
+        }
+      },
+      "personal_information": [
+        "Aïcha Fictive",
+        "456, avenue Ampère",
+        "Laprise QC L1A 3H7",
+        "299 000 000 003",
+        "299000000003",
+        "600 000 000 003",
+        "100 000 003",
+        "3000 00003",
+        "G9SJ0000003"
+      ],
+      "notes": "Same bill as hq-03, scanned."
+    },
+    {
+      "file": "other-utilities/gaz-boreal-01.pdf",
+      "format": "pdf",
+      "has_text_layer": true,
+      "expected": {
+        "bill": {
+          "utility": "gaz_boreal",
+          "account_number": "00000000011",
+          "customer_name": "Sophie Exemple-Gaz",
+          "rate_code": "Tarif D1",
+          "consumption_unit": "m3"
+        },
+        "entry": {
+          "start_billing_period": "2025-02-03",
+          "end_billing_period": "2025-03-04",
+          "consumption": "412",
+          "billed_power": null,
+          "bill_cost": "248.61"
+        }
+      },
+      "personal_information": [
+        "Sophie Exemple-Gaz",
+        "555, rue du Kilowatt",
+        "Villetest QC H0H 1T1",
+        "0000-000001-1",
+        "00000000011",
+        "GB-00000001"
+      ],
+      "notes": "Fictional natural gas distributor (Québec), French only."
+    },
+    {
+      "file": "other-utilities/gaz-boreal-01.png",
+      "format": "png",
+      "has_text_layer": false,
+      "expected": {
+        "bill": {
+          "utility": "gaz_boreal",
+          "account_number": "00000000011",
+          "customer_name": "Sophie Exemple-Gaz",
+          "rate_code": "Tarif D1",
+          "consumption_unit": "m3"
+        },
+        "entry": {
+          "start_billing_period": "2025-02-03",
+          "end_billing_period": "2025-03-04",
+          "consumption": "412",
+          "billed_power": null,
+          "bill_cost": "248.61"
+        }
+      },
+      "personal_information": [
+        "Sophie Exemple-Gaz",
+        "555, rue du Kilowatt",
+        "Villetest QC H0H 1T1",
+        "0000-000001-1",
+        "00000000011",
+        "GB-00000001"
+      ],
+      "notes": "Same gas bill as a PNG."
+    },
+    {
+      "file": "other-utilities/ovpl-01-phone-photo.png",
+      "format": "png",
+      "has_text_layer": false,
+      "expected": {
+        "bill": {
+          "utility": "ottawa_valley_power",
+          "account_number": "0000000001",
+          "customer_name": "Jane Sample-Test",
+          "rate_code": "RPP-TOU",
+          "consumption_unit": "kWh"
+        },
+        "entry": {
+          "start_billing_period": "2025-04-17",
+          "end_billing_period": "2025-05-16",
+          "consumption": "1013",
+          "billed_power": null,
+          "bill_cost": "147.03"
+        }
+      },
+      "personal_information": [
+        "Jane Sample-Test",
+        "42 Test Crescent",
+        "Sampletown ON K0K 1T1",
+        "0000 0000 01",
+        "0000000001"
+      ],
+      "notes": "Fictional Ontario electricity distributor, English only, phone photo."
+    }
+  ]
+}

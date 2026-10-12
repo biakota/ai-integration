@@ -1,0 +1,10 @@
+Django==5.2.17
+djangorestframework==3.18.1
+django-cors-headers==4.9.0
+drf-spectacular==0.30.0
+python-dotenv==1.1.1
+pdfplumber==0.11.10
+# Local OCR (used by bills/extraction/ocr.py): reading images and scanned PDFs.
+rapidocr==3.9.2
+onnxruntime==1.30.0
+pypdfium2==5.14.0
